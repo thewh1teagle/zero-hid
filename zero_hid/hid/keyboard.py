@@ -1,4 +1,4 @@
-from hid import write as hid_write
+from . import write as hid_write
 
 
 def send_keystroke(keyboard_path, control_keys, hid_keycode):

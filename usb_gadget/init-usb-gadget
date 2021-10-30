@@ -13,11 +13,13 @@ set -u
 
 modprobe libcomposite
 
+# https://eleccelerator.com/tutorial-about-usb-hid-report-descriptors/
+
+
 cd /sys/kernel/config/usb_gadget/
 mkdir -p g1
 cd g1
 
-# https://eleccelerator.com/tutorial-about-usb-hid-report-descriptors/
 echo 0x1d6b > idVendor  # Linux Foundation
 echo 0x0104 > idProduct # Multifunction Composite Gadget
 echo 0x0100 > bcdDevice # v1.0.0
@@ -26,7 +28,7 @@ echo 0x0200 > bcdUSB    # USB2
 STRINGS_DIR="strings/0x409"
 mkdir -p "$STRINGS_DIR"
 echo "6b65796d696d6570690" > "${STRINGS_DIR}/serialnumber"
-echo "zero_hid" > "${STRINGS_DIR}/manufacturer"
+echo "tinypilot" > "${STRINGS_DIR}/manufacturer"
 echo "Multifunction USB Device" > "${STRINGS_DIR}/product"
 
 # Keyboard
@@ -97,9 +99,9 @@ echo -ne \\x81\\x02      #   INPUT (Data,Var,Abs)
 echo -ne \\x05\\x01      #   USAGE_PAGE (Generic Desktop)
 echo -ne \\x09\\x30      #   USAGE (X)
 echo -ne \\x09\\x31      #   USAGE (Y)
-echo -ne \\x15\\x81      #   LOGICAL_MINIMUM (-127)
-echo -ne \\x25\\x7f      #   LOGICAL_MAXIMUM (127)
-echo -ne \\x75\\x08      #   REPORT_SIZE (8)
+echo -ne \\x15\\x81 #   LOGICAL_MINIMUM (-127)
+echo -ne \\x25\\x7f #   LOGICAL_MAXIMUM (127)
+echo -ne \\x75\\x08      #   REPORT_SIZE (16)
 echo -ne \\x95\\x02      #   REPORT_COUNT (2)
 echo -ne \\x81\\x06      #   INPUT (Data,Var,Rel)
                          #   vertical wheel
