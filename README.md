@@ -2,9 +2,14 @@
 
 HID library for emulate mouse and keyboard on PI zero.
 
-## Setup
-#### - Tested on [Raspbian](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit) lite 5.10 -
-install git and python pip
+## Setup - Tested on [Raspbian](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit) lite 5.10
+#### Single command installation
+```bash
+curl -Ss https://raw.githubusercontent.com/thewh1teagle/zero-hid/main/full_install.bash | sudo bash
+```
+
+#### Manual installation
+install packages
 ```bash
 sudo apt-get update && sudo apt-get install git python3-pip -y
 ```
