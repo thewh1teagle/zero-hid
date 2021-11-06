@@ -17,7 +17,6 @@ cd ~ && rm -rf /tmp/zero_hid
 echo "Done install."
 echo "You should reboot now."
 read -p "Do you want to reboot? (y/n)" -n 1 -r
-echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     /sbin/reboot
