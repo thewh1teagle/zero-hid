@@ -16,12 +16,11 @@ cd ~ && rm -rf /tmp/zero_hid
 
 echo "Done install."
 echo "You should reboot now."
-read -p "Do you want to reboot? (y/n)? " answer
-case ${answer:0:1} in
-    y|Y )
-        /sbin/reboot
-    ;;
-    * )
-        exit 0
-    ;;
-esac
+while true; do
+    read -p "Do you want to rebooot? (Y/n)" yn
+    case $yn in
+        [Yy]* ) /sbin/reboot; break;;
+        [Nn]* ) exit 0;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
