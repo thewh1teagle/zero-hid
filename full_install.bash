@@ -41,7 +41,7 @@ install() {
 uninstall() {
     mkdir zero_hid
     curl -L https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
-    pushd "zero_hid/usb_gadget"
+    pushd "zero_hid/usb-gadget"
     chmod +x ./remove-usb-gadget && ./remove-usb-gadget
     popd
     rm -rf /usr/bin/init-usb-gadget zero_hid
