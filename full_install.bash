@@ -29,6 +29,8 @@ install() {
     cd .. && python3 setup.py install
     cd ~ && rm -rf /tmp/zero_hid
 
+    /usr/bin/init-usb-gadget 2>/dev/null
+    
     echo "Done install."
     echo "You should reboot now."
 }
