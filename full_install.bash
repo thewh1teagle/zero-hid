@@ -38,10 +38,11 @@ install() {
 
 
 uninstall() {
-    pushd "usb_gadget/"
+    curl -L https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
+    pushd "zero_hid/usb_gadget"
     chmod +x ./remove-usb-gadget && ./remove-usb-gadget
     popd
-    rm -rf /usr/bin/init-usb-gadget
+    rm -rf /usr/bin/init-usb-gadget zero_hid
 
     sed -i '/dtoverlay=dwc2/d' /boot/config.txt
     sed -i '/dwc2/d' /etc/modules
@@ -50,6 +51,7 @@ uninstall() {
 
     echo "Uninstall done"
     echo "it's recommended to reboot"
+    
 }
 
 
