@@ -8,6 +8,7 @@ fi
 
 apt-get update && apt-get install python3-setuptools -y
 cd /tmp
+mkdir /tmp/zero-hid
 curl -L https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
 cd /tmp/zero-hid/usb_gadget
 chmod +x install.sh && ./install.sh
