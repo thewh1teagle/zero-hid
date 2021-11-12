@@ -44,7 +44,7 @@ install() {
 
 uninstall() {
     clone_repo
-    pushd "zero_hid/usb-gadget"
+    pushd "zero-hid/usb-gadget"
     chmod +x ./remove-usb-gadget && ./remove-usb-gadget
     popd
     rm -rf /usr/bin/init-usb-gadget zero_hid
