@@ -63,7 +63,7 @@ if [ -f /usr/bin/init-usb-gadget ]; then
         esac
     done
 else
-    echo "Installing..."
+    echo "Installing zero-hid..."
     install && echo "Installed."
     ask_reboot
 fi
