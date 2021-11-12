@@ -5,13 +5,12 @@ if [ "$EUID" -ne 0 ]
   exit 1
 fi
 
-apt-get update && apt-get upgrade -y
-apt-get install git python3-pip -y
+apt-get update && apt-get install python3-setuptools -y
 cd /tmp
-git clone https://github.com/thewh1teagle/zero-hid.git
+curl -L https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
 cd /tmp/zero-hid/usb_gadget
 chmod +x install.sh && ./install.sh
-cd .. && pip3 install .
+cd .. && python3 setup.py install
 cd ~ && rm -rf /tmp/zero_hid
 
 echo "Done install."
