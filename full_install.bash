@@ -20,7 +20,8 @@ ask_reboot() {
 }
 
 install() {
-    apt-get update && apt-get install python3-pip -y
+    [ -z "$(find -H /var/lib/apt/lists -maxdepth 0 -mtime -7)" ] && sudo apt-get update # is apt updated last week?
+    [ ! -f /usr/bin/pip3 ] && apt-get install python3-pip -y
     cd /tmp
     rm -rf /tmp/zero-hid
     mkdir /tmp/zero-hid
