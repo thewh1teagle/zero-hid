@@ -1,5 +1,10 @@
 #!/bin/bash
 
+clone_repo() {
+    mkdir zero-hid
+    curl -L https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
+}
+
 check_root() {
     ROOTUID="0"
     if [ "$(id -u)" -ne "$ROOTUID" ] ; then
@@ -24,8 +29,7 @@ install() {
     [ ! -f /usr/bin/pip3 ] && apt-get install python3-pip -y
     cd /tmp
     rm -rf /tmp/zero-hid
-    mkdir /tmp/zero-hid
-    curl -L https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
+    clone_repo
     cd /tmp/zero-hid/usb_gadget
     chmod +x install.sh && ./install.sh
     cd .. && pip3 install .
@@ -39,8 +43,7 @@ install() {
 
 
 uninstall() {
-    mkdir zero_hid
-    curl -L https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
+    clone_repo
     pushd "zero_hid/usb-gadget"
     chmod +x ./remove-usb-gadget && ./remove-usb-gadget
     popd
