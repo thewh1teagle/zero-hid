@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 apt-get update && apt-get upgrade -y
-apt-get install git python3-pip
+apt-get install git python3-pip -y
 cd /tmp
 git clone https://github.com/thewh1teagle/zero-hid.git
 cd /tmp/zero-hid/usb_gadget
