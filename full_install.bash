@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit 1
+ROOTUID="0"
+if [ "$(id -u)" -ne "$ROOTUID" ] ; then
+    echo "This script must be executed with root privileges."
+    exit 1
 fi
 
 apt-get update && apt-get install python3-setuptools -y
@@ -16,7 +17,7 @@ cd ~ && rm -rf /tmp/zero_hid
 echo "Done install."
 echo "You should reboot now."
 while true; do
-    read -p "Do you want to rebooot? (Y/n)" yn
+    read -p "Do you want to rebooot? (Y/n) " yn
     case $yn in
         [Yy]* ) /sbin/reboot; break;;
         [Nn]* ) exit 0;;
