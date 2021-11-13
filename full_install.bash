@@ -38,9 +38,6 @@ install() {
     cd ~ && rm -rf /tmp/zero_hid
 
     /usr/bin/init_usb_gadget 2>/dev/null
-
-    echo "Done install."
-    echo "You should reboot now."
 }
 
 
@@ -63,9 +60,6 @@ uninstall() {
 
 
     cd ~ && rm -rf /tmp/zero_hid
-    echo "Uninstall done"
-    echo "it's recommended to reboot"
-    
 }
 
 
@@ -76,13 +70,22 @@ if [ -f /usr/bin/init_usb_gadget ]; then
     while true; do
         read -p "Do you want to uninstall it? (Y/n) " yn </dev/tty
         case $yn in
-            [Yy]* ) uninstall && ask_reboot; break;;
-            [Nn]* ) exit 0;;
-            * ) echo "Please answer yes or no.";;
+            [Yy]* ) 
+                uninstall
+                echo "Uninstall done"
+                echo "it's recommended to reboot"
+                ask_reboot
+                break;;
+            [Nn]* ) 
+                exit 0;;
+            * ) 
+                echo "Please answer yes or no.";;
         esac
     done
 else
     echo "Installing zero-hid..."
-    install && echo "Installed."
+    install
+    echo "Done install."
+    echo "You should reboot now."
     ask_reboot
 fi
