@@ -9,7 +9,9 @@ HID library for emulate mouse and keyboard on PI zero.
 curl -LSs "https://git.io/JXpdg" | sudo bash
 ```
 
-#### Manual installation
+<details>
+  <summary>Manual installation</summary>
+  
 install packages
 ```bash
 sudo apt-get update && sudo apt-get install git python3-pip -y
@@ -25,6 +27,8 @@ install zero_hid to python
 cd zero_hid/
 pip3 install .
 ```
+
+</details>
 
 ## Usage
 Control mouse
