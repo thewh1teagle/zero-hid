@@ -25,14 +25,16 @@ ask_reboot() {
 }
 
 install() {
-    [ -z "$(find -H /var/lib/apt/lists -maxdepth 0 -mtime -7)" ] && sudo apt-get update # is apt updated last week?
-    [ ! -f /usr/bin/pip3 ] && apt-get install python3-pip -y
+    # [ -z "$(find -H /var/lib/apt/lists -maxdepth 0 -mtime -7)" ] && sudo apt-get update # is apt updated last week?
+    # [ ! -f /usr/bin/pip3 ] && apt-get install python3-pip -y
     cd /tmp
     rm -rf /tmp/zero-hid
     clone_repo
     cd /tmp/zero-hid/usb_gadget
     chmod +x install.sh && ./install.sh
-    cd .. && pip3 install .
+    # cd .. && pip3 install .
+    dist_packages=$(python3 -c 'import site; print(site.getsitepackages()[0])')
+    cp -rf "zero_hid" "$dist_packages/"
     cd ~ && rm -rf /tmp/zero_hid
 
     /usr/bin/init_usb_gadget 2>/dev/null
@@ -48,6 +50,9 @@ uninstall() {
     chmod +x ./remove_usb_gadget && ./remove_usb_gadget
     popd
     rm -rf /usr/bin/init_usb_gadget zero_hid
+
+    dist_packages=$(python3 -c 'import site; print(site.getsitepackages()[0])')
+    rm -rf "$dist_packages/zero_hid"
 
     sed -i '/dtoverlay=dwc2/d' /boot/config.txt
     sed -i '/dwc2/d' /etc/modules
