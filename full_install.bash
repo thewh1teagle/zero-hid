@@ -45,6 +45,8 @@ install() {
 
 
 uninstall() {
+    cd /tmp
+    rm -rf zero-hid
     clone_repo
     pushd "zero-hid/usb_gadget"
     chmod +x ./remove_usb_gadget && ./remove_usb_gadget
@@ -59,6 +61,8 @@ uninstall() {
     sed -i '/libcomposite/d' /etc/modules
     sed -i '/init_usb_gadget/d' /etc/rc.local
 
+
+    cd ~ && rm -rf /tmp/zero_hid
     echo "Uninstall done"
     echo "it's recommended to reboot"
     
