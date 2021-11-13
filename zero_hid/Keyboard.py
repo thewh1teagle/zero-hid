@@ -9,7 +9,7 @@ from functools import reduce
 import pkgutil
 
 class Keyboard:
-    US_KEYBOARD = json.loads( pkgutil.get_data(__name__, "keymaps/HE.json").decode() )
+    US_KEYBOARD = json.loads( pkgutil.get_data(__name__, "keymaps/US.json").decode() )
     
     def __init__(self, dev='/dev/hidg0') -> None:
         self.dev = dev
