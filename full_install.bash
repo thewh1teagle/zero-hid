@@ -52,7 +52,7 @@ uninstall() {
     sed -i '/dtoverlay=dwc2/d' /boot/config.txt
     sed -i '/dwc2/d' /etc/modules
     sed -i '/libcomposite/d' /etc/modules
-    sed -i '/init-usb_gadget/d' /etc/rc.local
+    sed -i '/init_usb_gadget/d' /etc/rc.local
 
     echo "Uninstall done"
     echo "it's recommended to reboot"
@@ -62,7 +62,7 @@ uninstall() {
 
 
 check_root
-if [ -f /usr/bin/init-usb_gadget ]; then
+if [ -f /usr/bin/init_usb_gadget ]; then
     echo "Looks like zero-hid already installed"
     while true; do
         read -p "Do you want to uninstall it? (Y/n) " yn </dev/tty
