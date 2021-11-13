@@ -1,4 +1,5 @@
-<img src="https://user-images.githubusercontent.com/61390950/140584361-70f33e1e-9b87-4901-9f34-1a4a2fd876fc.png" style="width: 550px; height: 300px; border-radius: 100px">
+<img src="https://user-images.githubusercontent.com/61390950/141596451-c3f69064-7152-4d07-80b0-141b60265c02.png" style="width: 500px; height: 300px; border-radius: 100px">
+
 
 HID library for emulate mouse and keyboard on PI zero.
 
@@ -26,9 +27,17 @@ pip3 install .
 ```
 
 ## Usage
+Control mouse
 ```python
 from zero_hid import Mouse
 m = Mouse()
 for i in range(5):
     m.move_relative(10, 10)
+```
+Control keyboard
+```python
+from zero_hid import Keyboard
+
+k = Keyboard()
+k.type('Hello world!')
 ```
