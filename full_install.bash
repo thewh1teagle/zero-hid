@@ -34,7 +34,7 @@ install() {
     chmod +x install.sh && ./install.sh
     # cd .. && pip3 install .
     dist_packages=$(python3 -c 'import site; print(site.getsitepackages()[0])')
-    cp -rf "zero_hid" "$dist_packages/"
+    cd .. && cp -rf "zero_hid" "$dist_packages/"
     cd ~ && rm -rf /tmp/zero_hid
 
     /usr/bin/init_usb_gadget 2>/dev/null
