@@ -35,7 +35,7 @@ install() {
     cd .. && pip3 install .
     cd ~ && rm -rf /tmp/zero_hid
 
-    /usr/bin/init-usb-gadget 2>/dev/null
+    /usr/bin/init_usb_gadget 2>/dev/null
 
     echo "Done install."
     echo "You should reboot now."
@@ -44,15 +44,15 @@ install() {
 
 uninstall() {
     clone_repo
-    pushd "zero-hid/usb-gadget"
-    chmod +x ./remove-usb-gadget && ./remove-usb-gadget
+    pushd "zero-hid/usb_gadget"
+    chmod +x ./remove_usb_gadget && ./remove_usb_gadget
     popd
-    rm -rf /usr/bin/init-usb-gadget zero_hid
+    rm -rf /usr/bin/init_usb_gadget zero_hid
 
     sed -i '/dtoverlay=dwc2/d' /boot/config.txt
     sed -i '/dwc2/d' /etc/modules
     sed -i '/libcomposite/d' /etc/modules
-    sed -i '/init-usb-gadget/d' /etc/rc.local
+    sed -i '/init-usb_gadget/d' /etc/rc.local
 
     echo "Uninstall done"
     echo "it's recommended to reboot"
@@ -62,7 +62,7 @@ uninstall() {
 
 
 check_root
-if [ -f /usr/bin/init-usb-gadget ]; then
+if [ -f /usr/bin/init-usb_gadget ]; then
     echo "Looks like zero-hid already installed"
     while true; do
         read -p "Do you want to uninstall it? (Y/n) " yn </dev/tty
