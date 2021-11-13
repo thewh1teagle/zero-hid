@@ -6,7 +6,7 @@ HID library for emulate mouse and keyboard on PI zero.
 ## Setup - Tested on [Raspbian](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit) lite 5.10
 #### Single command installation
 ```bash
-curl -Ss "https://git.io/JXpdg" | sudo bash
+curl -LSs "https://git.io/JXpdg" | sudo bash
 ```
 
 #### Manual installation
