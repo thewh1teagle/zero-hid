@@ -27,9 +27,17 @@ pip3 install .
 ```
 
 ## Usage
+Control mouse
 ```python
 from zero_hid import Mouse
 m = Mouse()
 for i in range(5):
     m.move_relative(10, 10)
+```
+Control keyboard
+```python
+from zero_hid import Keyboard
+
+k = Keyboard()
+k.type('Hello world!')
 ```
