@@ -28,7 +28,7 @@ install() {
     # [ -z "$(find -H /var/lib/apt/lists -maxdepth 0 -mtime -7)" ] && sudo apt-get update # is apt updated last week?
     # [ ! -f /usr/bin/pip3 ] && apt-get install python3-pip -y
     cd /tmp
-    rm -rf /tmp/zero-hid
+    rm -rf zero-hid
     clone_repo
     cd /tmp/zero-hid/usb_gadget
     chmod +x install.sh && ./install.sh
