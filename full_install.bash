@@ -1,8 +1,9 @@
 #!/bin/bash
 
 clone_repo() {
+    echo "Cloning zero-hid..."
     mkdir zero-hid
-    curl -L https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
+    curl -L --progress-bar https://github.com/thewh1teagle/zero-hid/tarball/main | tar xz --strip-components=1 -C zero-hid
 }
 
 check_root() {
