@@ -30,14 +30,16 @@ pip3 install .
 </details>
 
 ## Usage
-Control mouse
+Note: You should connect the data usb port (left one) to the raspberry, and NOT the power port  
+  
+- Control mouse
 ```python
 from zero_hid import Mouse
 m = Mouse()
 for i in range(5):
     m.move_relative(10, 10)
 ```
-Control keyboard
+- Control keyboard
 ```python
 from zero_hid import Keyboard
 
