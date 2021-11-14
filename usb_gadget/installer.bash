@@ -47,14 +47,14 @@ if [ -f "/usr/bin/init_usb_gadget" ]; then
     read -p "Do you want to uninstall it? (Y/n) " yn </dev/tty
     case $yn in
         [Yy]* )
-            install
-            echo "Installed usb gadget, You should reboot now"
+            uninstall
+            echo "Done uninstalling usb gadget. you should reboot now."    
             ask_reboot; break;;
         [Nn]* ) exit 0;;
         * ) echo "Please answer yes or no.";;
     esac
 else
     install
-    echo "Done uninstalling usb gadget. you should reboot now."
+    echo "Installed usb gadget, You should reboot now"
     ask_reboot
 fi
