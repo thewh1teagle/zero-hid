@@ -3,31 +3,20 @@
 HID python library for emulate mouse and keyboard on PI zero.
 
 ## Setup - Tested on [Raspbian](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit) lite 5.10
-#### Single command installation
-```bash
-curl -LSs "https://git.io/JXpdg" | sudo bash
-```
 
-<details>
-  <summary>Manual installation</summary>
-  
-install packages
-```bash
-sudo apt-get update && sudo apt-get install git python3-pip -y
-```
-clone the repo and install usb gadget module
-```bash
-git clone https://github.com/thewh1teagle/zero-hid
-cd zero_hid/usb_gadget
-chmod +x install.sh && sudo ./install.sh
-```
-install zero_hid to python
-```bash
-cd zero_hid/
-pip3 install .
-```
+1. Install apt dependencies
 
-</details>
+```bash
+sudo apt-get update
+sudo apt-get install -y git python3-pip
+```  
+
+
+2. install [usb gadget module](https://github.com/thewh1teagle/zero-hid/tree/main/usb_gadget)  
+3. Install `zero_hid` with `pip`
+```bash
+pip3 install zero_hid
+```
 
 ## Usage
 Note: You should connect the data usb port (left one) to the raspberry, and NOT the power port  
