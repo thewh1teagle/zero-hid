@@ -30,5 +30,10 @@ class Keyboard:
             send_keystroke(self.dev, mods, keys[0])
             sleep(delay)
 
+    def press_keys(self, keys: List[int], release):
+        send_keystroke(self.dev, keys, [], release=release)
+
     def release(self):
         release_keys(self.dev)
+    
+

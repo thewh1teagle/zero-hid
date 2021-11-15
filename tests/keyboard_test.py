@@ -1,53 +1,21 @@
 import tempfile
-import unittest
-
-from hid import keyboard
-from hid import keycodes
+from zero_hid import Keyboard
 
 
-class KeyboardTest(unittest.TestCase):
+def test_typing():
+    with tempfile.NamedTemporaryFile() as f:
+        k = Keyboard(f.name)
+        k.type("Hello world!")
+        f.seek(0)
+        expect = b'\x02\x00\x0b\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00,\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x1a\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x12\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x15\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x1e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+        assert expect == f.read()
 
-    def test_send_hid_keycode_to_hid_interface(self):
-        with tempfile.NamedTemporaryFile() as input_file:
-            keyboard.send_keystroke(
-                keyboard_path=input_file.name,
-                control_keys=keycodes.KEYCODE_NONE,
-                hid_keycode=keycodes.KEYCODE_A,
-            )
-            input_file.seek(0)
-            # Press the key then release the key.
-            self.assertEqual(
-                b'\x00\x00\x04\x00\x00\x00\x00\x00'
-                b'\x00\x00\x00\x00\x00\x00\x00\x00', input_file.read())
 
-    def test_send_control_key_to_hid_interface(self):
-        with tempfile.NamedTemporaryFile() as input_file:
-            keyboard.send_keystroke(
-                keyboard_path=input_file.name,
-                control_keys=keycodes.MODIFIER_LEFT_SHIFT,
-                hid_keycode=keycodes.KEYCODE_NONE,
-            )
-            input_file.seek(0)
-            # Press the key, but do not release the key. This is to allow for
-            # shift+click type behavior.
-            self.assertEqual(b'\x02\x00\x00\x00\x00\x00\x00\x00',
-                             input_file.read())
 
-    def test_send_control_key_and_hid_keycode_to_hid_interface(self):
-        with tempfile.NamedTemporaryFile() as input_file:
-            keyboard.send_keystroke(
-                keyboard_path=input_file.name,
-                control_keys=keycodes.MODIFIER_LEFT_SHIFT,
-                hid_keycode=keycodes.KEYCODE_A,
-            )
-            input_file.seek(0)
-            # Press the key then release the key.
-            self.assertEqual(
-                b'\x02\x00\x04\x00\x00\x00\x00\x00'
-                b'\x00\x00\x00\x00\x00\x00\x00\x00', input_file.read())
+def test_release():
+    with tempfile.NamedTemporaryFile() as f:
+        k = Keyboard(f.name)
+        k.release()
+        f.seek(0)
+        assert b'\x00\x00\x00\x00\x00\x00\x00\x00' == f.read()
 
-    def test_send_release_keys_to_hid_interface(self):
-        with tempfile.NamedTemporaryFile() as input_file:
-            keyboard.release_keys(keyboard_path=input_file.name)
-            self.assertEqual(b'\x00\x00\x00\x00\x00\x00\x00\x00',
-                             input_file.read())
