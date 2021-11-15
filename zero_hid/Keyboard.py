@@ -29,7 +29,6 @@ class Keyboard:
         
     def set_layout(self,  language='US'):
         self.layout = json.loads( pkgutil.get_data(__name__, f"keymaps/{language}.json").decode() )
-        breakpoint()
     def type(self, text, delay=0):
         for c in text:
             key_map = self.layout['Mapping'][c]
