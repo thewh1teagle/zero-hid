@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 # with open('requirements.txt', 'r') as f:
 #     requirements = f.read().splitlines()
 setup(
-    name="zero_hid",  # How you named your package folder
+    name="zero-hid",  # How you named your package folder
     packages=['zero_hid', 'zero_hid.hid'],  # Chose the same as "name"
     include_package_data=True,
     version="v0.1.3",  # Start with a small number and increase it with every change you make
