@@ -65,7 +65,7 @@ def _write_to_hid_interface_immediately(hid_path, buffer):
             hid_handle.write(bytearray(buffer))
     except BlockingIOError:
         logger.error(
-            f'Failed to write to HID interface: {hid_path}. Is USB cable connected and Gadget module installed? https://git.io/J1T0v?'
+            f'Failed to write to HID interface: {hid_path}. Is USB cable connected and Gadget module installed? check https://git.io/J1T7Q'
         )
 
 
@@ -91,7 +91,7 @@ def write_to_hid_interface(hid_path, buffer):
     # If the result is None, it means the write failed to complete in time.
     if result is None or not result.was_successful():
         raise WriteError(
-            f'Failed to write to HID interface: {hid_path}. Is USB cable connected and Gadget module installed? https://git.io/J1T0v?'
+            f'Failed to write to HID interface: {hid_path}. Is USB cable connected and Gadget module installed? check https://git.io/J1T7Q'
         )
 
 
