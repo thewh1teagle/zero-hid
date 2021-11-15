@@ -13,7 +13,7 @@ get into usb_gadget folder
 ```bash
 cd zero-hid/usb_gadget
 ```
-give the installer permission and execute `install.bash`
+give the installer permission and execute `installer.bash`
 ```bash
 chmod +x installer.bash && sudo ./installer.bash
 ```
