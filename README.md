@@ -12,7 +12,7 @@ sudo apt-get install -y git python3-pip
 ```  
 
 
-2. install [usb gadget module](https://github.com/thewh1teagle/zero-hid/tree/main/usb_gadget)  
+2. install [usb gadget module](https://github.com/thewh1teagle/zero-hid/tree/main/usb_gadget#usb-gadget-module-configuration-for-zero-hid)  
 3. Install `zero_hid` with `pip`
 ```bash
 pip3 install zero_hid
