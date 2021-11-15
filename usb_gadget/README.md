@@ -15,5 +15,5 @@ cd zero-hid/usb_gadget
 ```
 give the installer permission and execute `install.bash`
 ```bash
-chmod +x install.bash && ./installer.bash
+chmod +x installer.bash && sudo ./installer.bash
 ```
