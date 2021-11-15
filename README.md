@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/61390950/141596451-c3f69064-7152-4d07-80b0-141b60265c02.png" style="width: 500px; height: 300px; border-radius: 100px">
 
-HID python library for emulate mouse and keyboard on PI zero.
+HID python library for emulating mouse and keyboard on PI zero.
 
 ## Setup - Tested on [Raspbian](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit) lite 5.10
 
