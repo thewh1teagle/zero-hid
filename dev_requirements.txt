@@ -1,2 +1,1 @@
 pytest
-zero_hid
