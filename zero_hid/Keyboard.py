@@ -7,16 +7,32 @@ import json
 import operator
 from functools import reduce
 import pkgutil
+import os
+import pathlib
 
 class Keyboard:
-    US_KEYBOARD = json.loads( pkgutil.get_data(__name__, "keymaps/US.json").decode() )
     
     def __init__(self, dev='/dev/hidg0') -> None:
         self.dev = dev
-
+        self.set_layout()
+    
+    def list_layout(self):
+        keymaps_dir = pathlib.Path(__file__).parent.absolute() / 'keymaps'
+        keymaps = os.listdir(keymaps_dir)
+        files = [f for f in keymaps if f.endswith('.json')]
+        for count, fname in enumerate(files, 1):
+            with open(keymaps_dir / fname , encoding='UTF-8') as f:
+                content = json.load(f)
+                name, desc = content['Name'], content['Description']
+            print(f'{count}. {name}: {desc}') 
+        
+        
+    def set_layout(self,  language='US'):
+        self.layout = json.loads( pkgutil.get_data(__name__, f"keymaps/{language}.json").decode() )
+        breakpoint()
     def type(self, text, delay=0):
         for c in text:
-            key_map = self.US_KEYBOARD['Mapping'][c]
+            key_map = self.layout['Mapping'][c]
             key_map = key_map[0]
             mods = key_map['Modifiers']
             keys = key_map['Keys']

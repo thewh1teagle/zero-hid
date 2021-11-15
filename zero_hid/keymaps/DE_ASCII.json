@@ -1,5 +1,5 @@
 {
-	"Name": "DE",
+	"Name": "DE_ASCII",
 	"Description": "German ASCII to USB Keyboard report mapping",
 	"Mapping": {
 		"\t": [{"Modifiers": [], "Keys": ["KEY_TAB"]}],

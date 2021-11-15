@@ -10,11 +10,11 @@ class KeyCodes:
     MOD_LEFT_CONTROL = 0x01
     MOD_LEFT_SHIFT = 0x02
     MOD_LEFT_ALT = 0x04
-    MOD_LEFT_GUI = 0x08
+    MOD_LEFT_GUI = 0x08 # win button
     MOD_RIGHT_CONTROL = 0x10
     MOD_RIGHT_SHIFT = 0x20
     MOD_RIGHT_ALT = 0x40
-    MOD_RIGHT_GUI = 0x80
+    MOD_RIGHT_GUI = 0x80 # win button
 
     KEY_RESERVED = 0x00
     KEY_ERROR_ROLLOVER = 0x01

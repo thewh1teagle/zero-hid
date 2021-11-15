@@ -1,6 +1,5 @@
 from . import write as hid_write
 
-
 def send_keystroke(keyboard_path, control_keys, hid_keycode, release = True):
     buf = [0] * 8
     buf[0] = control_keys
