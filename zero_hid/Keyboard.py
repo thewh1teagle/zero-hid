@@ -45,8 +45,12 @@ class Keyboard:
             send_keystroke(self.dev, mods, keys[0])
             sleep(delay)
 
-    def press_keys(self, keys: List[int], release):
-        send_keystroke(self.dev, keys, [], release=release)
+    def press(self, mods: List[int], key_code: int = 0, release=True):
+        if len(mods) == 1:
+            mods = mods[0]
+        else:
+            mods = reduce(operator.and_, mods, 0)
+        send_keystroke(self.dev, mods, key_code, release=release)
 
     def release(self):
         release_keys(self.dev)
