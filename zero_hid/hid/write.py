@@ -64,7 +64,7 @@ def _write_to_hid_interface_immediately(hid_dev, buffer):
             hid_dev.write(bytearray(buffer))
     except BlockingIOError:
         logger.error(
-            f'Failed to write to HID interface: {hid_path}. Is USB cable connected and Gadget module installed? check https://git.io/J1T7Q'
+            f'Failed to write to HID interface: {hid_dev}. Is USB cable connected and Gadget module installed? check https://git.io/J1T7Q'
         )
 
 
@@ -72,7 +72,7 @@ def write_to_hid_interface(hid_dev, buffer):
     # Avoid an unnecessary string formatting call in a write that requires low
     # latency.
     if logger.getEffectiveLevel() == logging.DEBUG:
-        logger.debug('writing to HID interface %s: %s', hid_path,
+        logger.debug('writing to HID interface %s: %s', hid_dev,
                      ' '.join(['0x%02x' % x for x in buffer]))
     # Writes can hang, for example, when TinyPilot is attempting to write to the
     # mouse interface, but the target system has no GUI. To avoid locking up the
@@ -90,7 +90,7 @@ def write_to_hid_interface(hid_dev, buffer):
     # If the result is None, it means the write failed to complete in time.
     if result is None or not result.was_successful():
         raise WriteError(
-            f'Failed to write to HID interface: {hid_path}. Is USB cable connected and Gadget module installed? check https://git.io/J1T7Q'
+            f'Failed to write to HID interface: {hid_dev}. Is USB cable connected and Gadget module installed? check https://git.io/J1T7Q'
         )
 
 

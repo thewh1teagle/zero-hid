@@ -36,6 +36,7 @@ class Mouse:
     
     
     def __exit__(self, exc_type, exc_val, exc_tb):
+        print(f'closing handle {self.dev}')
         self.dev.close()
         
         
