@@ -7,8 +7,8 @@ class RelativeMoveRangeError(Exception):
 
 
 class Mouse:
-    def __init__(self, dev='/dev/hidg1') -> None:
-        self.dev = dev
+    def __init__(self, dev_path='/dev/hidg1') -> None:
+        self.dev = open(dev_path, 'ab+')
     
     def left_click(self):
         send_mouse_event(self.dev, 0x1, 0, 0, 0, 0)
@@ -28,3 +28,17 @@ class Mouse:
         if not -127 <= y <= 127:
             RelativeMoveRangeError(f"Value of x: {y} out of range (-127 - 127)")
         send_mouse_event(self.dev, 0x0, x, y, 0, 0)
+        
+        
+        
+    def __enter__(self):
+        return self
+    
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.dev.close()
+        
+        
+    
+    def close_device():
+        self.dev.close()
