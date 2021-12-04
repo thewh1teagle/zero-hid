@@ -33,13 +33,16 @@ class Mouse:
         
     def __enter__(self):
         return self
-    
+
+
+    def _clean_resources(self):
+        print(f'closing handle {self.dev}')
+        self.dev.close()    
     
     def __exit__(self, exc_type, exc_val, exc_tb):
-        print(f'closing handle {self.dev}')
-        self.dev.close()
+        self._clean_resources()
         
         
     
-    def close_device():
-        self.dev.close()
+    def close(self):
+        self._clean_resources()
