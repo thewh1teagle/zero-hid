@@ -35,3 +35,16 @@ from zero_hid import Keyboard
 k = Keyboard()
 k.type('Hello world!')
 ```
+
+## Gotaches
+
+Error when installing with pip
+```shell
+error: externally-managed-environment
+```
+See [how-solve-error-externally-managed-environment-when-installing-pip3](https://www.jeffgeerling.com/blog/2023/how-solve-error-externally-managed-environment-when-installing-pip3)
+
+Or simply execute
+```shell
+sudo rm -rf /usr/lib/python3.11/EXTERNALLY-MANAGED
+```
