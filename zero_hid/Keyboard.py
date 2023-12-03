@@ -32,6 +32,7 @@ class Keyboard:
         
     def set_layout(self,  language='US'):
         self.layout = json.loads( pkgutil.get_data(__name__, f"keymaps/{language}.json").decode() )
+    
     def type(self, text, delay=0):
         for c in text:
             key_map = self.layout['Mapping'][c]
@@ -58,4 +59,18 @@ class Keyboard:
     def release(self):
         release_keys(self.dev)
     
+            
+    def __enter__(self):
+        return self
+
+
+    def _clean_resources(self):
+        self.dev.close()    
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self._clean_resources()
+        
+    
+    def close(self):
+        self._clean_resources()
 

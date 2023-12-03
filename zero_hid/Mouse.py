@@ -40,7 +40,6 @@ class Mouse:
 
 
     def _clean_resources(self):
-        print(f'closing handle {self.dev}')
         self.dev.close()    
     
     def __exit__(self, exc_type, exc_val, exc_tb):
