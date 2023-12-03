@@ -8,7 +8,7 @@ HID python library for emulating mouse and keyboard on PI zero.
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y git python3-pip
+sudo apt-get install -y git python3-full
 ```  
 
 
