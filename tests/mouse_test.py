@@ -3,8 +3,8 @@ from zero_hid import Mouse
 
 
 def test_left_click():
-    with tempfile.NamedTemporaryFile() as f:
-        m = Mouse(f)
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmpdir:
+        m = Mouse(f'{tmpdir}/test')
         m.left_click()
         m.close()
         f.seek(0)
@@ -12,8 +12,8 @@ def test_left_click():
 
 
 def test_move():
-    with tempfile.NamedTemporaryFile() as f:
-            m = Mouse(f)
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmpdir:
+            m = Mouse(f'{tmpdir}/test')
             m.move_relative(100, 100)
             m.close()
             f.seek(0)

@@ -13,7 +13,10 @@ import pathlib
 class Keyboard:
     
     def __init__(self, dev='/dev/hidg0') -> None:
-        self.dev = dev
+        if not hasattr(dev, 'write'): # check if file like object
+            self.dev = open(dev, 'ab+')
+        else:
+            self.dev = dev
         self.set_layout()
     
     def list_layout(self):

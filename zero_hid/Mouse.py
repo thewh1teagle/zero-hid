@@ -7,8 +7,12 @@ class RelativeMoveRangeError(Exception):
 
 
 class Mouse:
-    def __init__(self, dev_path='/dev/hidg1') -> None:
-        self.dev = open(dev_path, 'ab+')
+    def __init__(self, dev='/dev/hidg1') -> None:
+        if not hasattr(dev, 'write'): # check if file like object
+            self.dev = open(dev, 'ab+')
+        else:
+            self.dev = dev
+
     
     def left_click(self):
         send_mouse_event(self.dev, 0x1, 0, 0, 0, 0)
