@@ -1,10 +1,9 @@
 import tempfile
 from zero_hid import Keyboard
-from utils import random_file
+from common import random_file
 
 def test_typing():
-    path = random_file()
-    with open(path, 'ab+') as f:
+    with open(random_file(), 'ab+') as f:
         k = Keyboard(f)
         k.type("Hello world!")
         f.seek(0)
@@ -16,8 +15,7 @@ def test_typing():
 
 
 def test_release():
-    path = random_file()
-    with open(path, 'ab+') as f:
+    with open(random_file(), 'ab+') as f:
         k = Keyboard(f)
         k.release()
         f.seek(0)

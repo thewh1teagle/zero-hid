@@ -1,10 +1,9 @@
 import tempfile
 from zero_hid import Mouse
-from utils import random_file
+from common import random_file
 
 def test_left_click():
-        path = random_file()
-        with open(path, 'ab+') as f:
+        with open(random_file(), 'ab+') as f:
             m = Mouse(f)
             m.left_click()
             f.seek(0)
@@ -14,8 +13,7 @@ def test_left_click():
 
 
 def test_move():
-    path = random_file()
-    with open(path, 'ab+') as f:
+    with open(random_file(), 'ab+') as f:
         m = Mouse(f)
         m.move_relative(100, 100)
         f.seek(0)
