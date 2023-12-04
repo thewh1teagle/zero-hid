@@ -39,10 +39,11 @@ k.type('Hello world!')
 
 ## Features
 - Relative / Absolute mouse movements
-- Left / Right click
+- Left / Right / Middle click
 - Scrolling
 - Typing
 - Hot keys
+- Drag and Drop
 - Easy to setup
 - Comprehensive Testing
 
