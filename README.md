@@ -9,7 +9,7 @@ HID python library for emulating mouse and keyboard on PI.
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y git python3-full
+sudo apt-get install -y git python3-pip
 ```  
 
 
