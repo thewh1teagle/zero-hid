@@ -37,6 +37,15 @@ k = Keyboard()
 k.type('Hello world!')
 ```
 
+## Features
+- Relative / Absolute mouse movements
+- Left / Right click
+- Scrolling
+- Typing
+- Hot keys
+- Easy to setup
+- Comprehensive Testing
+
 ## Examples
 see [examples](examples)
 
