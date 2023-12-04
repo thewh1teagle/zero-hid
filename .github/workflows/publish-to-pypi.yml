@@ -1,6 +1,10 @@
 name: Publish Python 🐍 distributions 📦 to PyPI
 
-on: release
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
 
 jobs:
   build-n-publish:
