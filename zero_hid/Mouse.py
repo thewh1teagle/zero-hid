@@ -34,14 +34,14 @@ class Mouse:
             raise RelativeMoveRangeError(f"Value of x: {x} out of range (-127 - 127)")
         if not -127 <= y <= 127:
             RelativeMoveRangeError(f"Value of y: {y} out of range (-127 - 127)")
-        self.__send_mouse_event(self.dev, 0x0, x, y, 0, 0, absolute=False)
+        self.__send_mouse_event(self.dev, 0x0, x, y, 0, 0)
         
     def __move_absolute(self, x, y):
         if not 0 <= x <= 65535: 
             raise RelativeMoveRangeError(f"Value of x: {x} out of range (0 - 65535)")
         if not 0 <= y <= 65535:
             RelativeMoveRangeError(f"Value of y: {y} out of range (0 - 65535)")
-        self.__send_mouse_event(self.dev, 0x0, x, y, 0, 0, absolute=True)
+        self.__send_mouse_event(self.dev, 0x0, x, y, 0, 0)
         
         
     def __enter__(self):
