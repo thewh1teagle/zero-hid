@@ -1,4 +1,4 @@
-import defaults
+from . import defaults
 from .hid.mouse import send_mouse_event
 from typing import SupportsInt
 

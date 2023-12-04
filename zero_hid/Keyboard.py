@@ -2,7 +2,7 @@ from typing import List
 
 from .hid.keyboard import send_keystroke, release_keys
 from .hid.keycodes import KeyCodes
-import defaults
+from . import defaults
 from time import sleep
 import json
 import operator
