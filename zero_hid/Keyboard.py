@@ -57,6 +57,7 @@ class Keyboard:
             mods = reduce(operator.and_, mods, 0)
         send_keystroke(self.dev, mods, key_code, release=release)
 
+
     def release(self):
         release_keys(self.dev)
     
