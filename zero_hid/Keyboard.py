@@ -2,6 +2,7 @@ from typing import List
 
 from .hid.keyboard import send_keystroke, release_keys
 from .hid.keycodes import KeyCodes
+import defaults
 from time import sleep
 import json
 import operator
@@ -12,7 +13,7 @@ import pathlib
 
 class Keyboard:
     
-    def __init__(self, dev='/dev/hidg0') -> None:
+    def __init__(self, dev=defaults.KEYBOARD_PATH) -> None:
         if not hasattr(dev, 'write'): # check if file like object
             self.dev = open(dev, 'ab+')
         else:

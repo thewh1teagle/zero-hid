@@ -1,3 +1,4 @@
+import defaults
 from .hid.mouse import send_mouse_event
 from typing import SupportsInt
 
@@ -7,7 +8,8 @@ class RelativeMoveRangeError(Exception):
 
 
 class Mouse:
-    def __init__(self, dev='/dev/hidg1') -> None:
+    def __init__(self, dev = defaults.RELATIVE_MOUSE_PATH, absolute = False) -> None:
+        self.move = self.__move_absolute if absolute else self.__move_relative
         if not hasattr(dev, 'write'): # check if file like object
             self.dev = open(dev, 'ab+')
         else:
@@ -21,8 +23,8 @@ class Mouse:
     def right_click(self):
         send_mouse_event(self.dev, 0x1, 0, 0, 0, 0)
         send_mouse_event(self.dev, 0x2, 0, 0, 0, 0)
-    
-    def move_relative(self, x, y):
+
+    def __move_relative(self, x, y):
         """
         move the mouse in relative mode
         x,y should be in range of -127 to 127
@@ -31,10 +33,14 @@ class Mouse:
             raise RelativeMoveRangeError(f"Value of x: {x} out of range (-127 - 127)")
         if not -127 <= y <= 127:
             RelativeMoveRangeError(f"Value of y: {y} out of range (-127 - 127)")
-        send_mouse_event(self.dev, 0x0, x, y, 0, 0)
+        send_mouse_event(self.dev, 0x0, x, y, 0, 0, absolute=False)
         
-    def move_absolute(self, x, y):
-        send_mouse_event(self.dev, 0x0, x, y, 0, 0)
+    def __move_absolute(self, x, y):
+        if not 0 <= x <= 65535: 
+            raise RelativeMoveRangeError(f"Value of x: {x} out of range (0 - 65535)")
+        if not 0 <= y <= 65535:
+            RelativeMoveRangeError(f"Value of y: {y} out of range (0 - 65535)")
+        send_mouse_event(self.dev, 0x0, x, y, 0, 0, absolute=True)
         
         
     def __enter__(self):
