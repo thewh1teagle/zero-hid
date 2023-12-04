@@ -5,9 +5,10 @@ from typing import SupportsInt
 class RelativeMoveRangeError(Exception):
     pass
 
-
 class Mouse:
-    def __init__(self, dev = defaults.RELATIVE_MOUSE_PATH, absolute = False) -> None:
+    def __init__(self, dev = None, absolute = False) -> None:
+        if dev is None:
+            dev = defaults.ABSOLUTE_MOUSE_PATH if absolute else defaults.RELATIVE_MOUSE_PATH
         self.move = self.__move_absolute if absolute else self.__move_relative # dynamic move method
         self.__send_mouse_event = absolute_mouse_event if absolute else relative_mouse_event # dynamic mouse event method
         if not hasattr(dev, 'write'): # check if file like object
