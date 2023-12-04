@@ -2,7 +2,6 @@ from . import defaults
 from .hid.mouse import relative_mouse_event, absolute_mouse_event
 from typing import SupportsInt
 
-
 class RelativeMoveRangeError(Exception):
     pass
 
@@ -22,8 +21,8 @@ class Mouse:
         self.__send_mouse_event(self.dev, 0x0, 0, 0, 0, 0)
     
     def right_click(self):
-        self.__send_mouse_event(self.dev, 0x1, 0, 0, 0, 0)
         self.__send_mouse_event(self.dev, 0x2, 0, 0, 0, 0)
+        self.__send_mouse_event(self.dev, 0x0, 0, 0, 0, 0)
 
     def __move_relative(self, x, y):
         """
