@@ -27,7 +27,7 @@ Note: You should connect the data usb port (left one) to the raspberry, and NOT 
 from zero_hid import Mouse
 m = Mouse()
 for i in range(5):
-    m.move_relative(10, 10)
+    m.move(10, 10)
 ```
 - Control keyboard
 ```python
@@ -36,6 +36,9 @@ from zero_hid import Keyboard
 k = Keyboard()
 k.type('Hello world!')
 ```
+
+## Examples
+see [examples](examples)
 
 ## Tests
 | Raspberry Pi Model | Raspbian Version | Kernel Version |
