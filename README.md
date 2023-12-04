@@ -37,6 +37,9 @@ k = Keyboard()
 k.type('Hello world!')
 ```
 
+## Examples
+see [examples](examples)
+
 ## Tests
 | Raspberry Pi Model | Raspbian Version | Kernel Version |
 |---------------------|-------------------|----------------|
