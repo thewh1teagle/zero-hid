@@ -15,7 +15,7 @@ setup(
     long_description_content_type="text/markdown",
     author="thewh1teagle",  # Type in your name
     author_email="example@gmail.com",  # Type in your E-Mail
-    url="https://github.com/thewh1teagle/zero_hid",  # Provide either the link to your github or to your website
+    url="https://github.com/thewh1teagle/zero-hid",  # Provide either the link to your github or to your website
     download_url="",
     keywords=[
         "rpi",
