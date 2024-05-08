@@ -1,5 +1,5 @@
 
-<img width=400 src="https://github.com/thewh1teagle/zero-hid/assets/61390950/13608efd-15c1-4fdd-86b5-e411e15fa638">
+<img width=550 src="https://github.com/thewh1teagle/zero-hid/assets/61390950/13608efd-15c1-4fdd-86b5-e411e15fa638">
 
 HID python library for emulating mouse and keyboard on PI.
 
