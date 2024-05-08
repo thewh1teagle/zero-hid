@@ -65,7 +65,11 @@ error: externally-managed-environment
 ```
 See [how-solve-error-externally-managed-environment-when-installing-pip3](https://www.jeffgeerling.com/blog/2023/how-solve-error-externally-managed-environment-when-installing-pip3)
 
-Or simply execute
+Or simply create virtual environment
 ```shell
-sudo rm -rf /usr/lib/python3.11/EXTERNALLY-MANAGED
+sudo apt-get update
+sudo apt install -y python3-venv
+python3 -m venv ~/venv
+source ~/venv/bin/activate
+pip3 install zero-hid
 ```
