@@ -10,18 +10,26 @@ HID python library for emulating mouse and keyboard on PI.
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y git python3-pip
+sudo apt-get install -y git python3-pip python3-venv
 ```  
 
+2. Create virtual environment
 
-2. install [usb gadget module](https://github.com/thewh1teagle/zero-hid/tree/main/usb_gadget#usb-gadget-module-configuration-for-zero-hid)  
-3. Install `zero-hid` with `pip`
+```console
+python3 -m venv ~/venv
+source ~/venv/bin/activate
+```
+
+3. install [usb gadget module](https://github.com/thewh1teagle/zero-hid/tree/main/usb_gadget#usb-gadget-module-configuration-for-zero-hid)
+
+4. Install `zero-hid` with `pip`
 ```bash
 pip3 install zero-hid
 ```
+5. Reboot *if not already!*
 
 ## Usage
-Note: You should connect the data usb port (left one) to the raspberry, and NOT the power port  
+Note: You should connect the data usb port (left one) to the raspberry, and **NOT** the power port  
   
 - Control mouse
 ```python
@@ -57,19 +65,3 @@ see [examples](examples)
 | Raspberry Pi 4      | Raspbian 12       | 6.1            |
 | Raspberry Pi Zero   | Raspbian 5.10     | -              |
 
-## Gotaches
-
-Error when installing with pip
-```shell
-error: externally-managed-environment
-```
-See [how-solve-error-externally-managed-environment-when-installing-pip3](https://www.jeffgeerling.com/blog/2023/how-solve-error-externally-managed-environment-when-installing-pip3)
-
-Or simply create virtual environment
-```shell
-sudo apt-get update
-sudo apt install -y python3-venv
-python3 -m venv ~/venv
-source ~/venv/bin/activate
-pip3 install zero-hid
-```
