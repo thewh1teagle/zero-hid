@@ -8,7 +8,7 @@ HID python library for emulating mouse and keyboard on PI.
 
 1. Install apt dependencies
 
-```bash
+```console
 sudo apt-get update
 sudo apt-get install -y git python3-pip python3-venv
 ```  
@@ -23,7 +23,7 @@ source ~/venv/bin/activate
 3. install [usb gadget module](https://github.com/thewh1teagle/zero-hid/tree/main/usb_gadget#usb-gadget-module-configuration-for-zero-hid)
 
 4. Install `zero-hid` with `pip`
-```bash
+```console
 pip3 install zero-hid
 ```
 5. Reboot *if not already!*
