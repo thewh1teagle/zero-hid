@@ -53,6 +53,7 @@ k.type('Hello world!')
 - Typing
 - Hot keys
 - Drag and Drop
+- LEDs status
 - Easy to setup
 - Comprehensive Testing
 

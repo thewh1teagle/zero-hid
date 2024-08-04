@@ -38,7 +38,7 @@ class Keyboard:
                 name, desc = content["Name"], content["Description"]
             print(f"{count}. {name}: {desc}")
 
-    def blocking_read_led_state(self) -> LEDState:
+    def blocking_read_led_status(self) -> LEDState:
         """
         **The function will block until the LED state has been read from the device.**
         """
