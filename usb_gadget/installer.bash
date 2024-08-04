@@ -22,7 +22,13 @@ ask_reboot() {
 
 
 install() {
-    echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt # upstream driver which can do the OTG host/gadget flip dictated by OTG_SENSE.
+    # Upstream driver which can do the OTG host/gadget flip dictated by OTG_SENSE.
+    if [ -f /boot/firmware/config.txt ]; then
+        # Breaking change of Raspbian from version of Bookworm
+        echo "dtoverlay=dwc2" | sudo tee -a /boot/firmware/config.txt
+    else
+        echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt
+    fi
     echo "dwc2" | sudo tee -a /etc/modules # loat at boot
     echo "libcomposite" | sudo tee -a /etc/modules
     cp init_usb_gadget /usr/bin/ # USB gadget configFS
