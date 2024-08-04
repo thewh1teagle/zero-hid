@@ -41,7 +41,15 @@ install() {
 uninstall () {
     chmod +x ./remove_usb_gadget && ./remove_usb_gadget
     rm -rf /usr/bin/init_usb_gadget
-    sed -i '/dtoverlay=dwc2/d' /boot/config.txt
+    
+    # Remove configuration from /boot/firmware/config.txt if it exists
+    if [ -f /boot/firmware/config.txt ]; then
+        # Breaking change of Raspbian from version of Bookworm
+        sed -i '/dtoverlay=dwc2/d' /boot/firmware/config.txt
+    else
+        sed -i '/dtoverlay=dwc2/d' /boot/config.txt
+    fi
+
     sed -i '/dwc2/d' /etc/modules
     sed -i '/libcomposite/d' /etc/modules
     sed -i '/init_usb_gadget/d' /etc/rc.local
