@@ -13,7 +13,7 @@ get into usb_gadget folder
 ```bash
 cd zero-hid/usb_gadget
 ```
-Execute `installer.bash`
+Execute `installer`
 ```bash
-sudo ./installer.bash
+sudo ./installer
 ```
