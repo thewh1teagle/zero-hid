@@ -60,10 +60,12 @@ k.type('Hello world!')
 see [examples](examples)
 
 ## Tests
-| Raspberry Pi Model | Raspbian Version | Kernel Version |
-|---------------------|-------------------|----------------|
-| Raspberry Pi 4      | Raspbian 12       | 6.1            |
-| Raspberry Pi Zero   | Raspbian 5.10     | -              |
+
+| Raspberry Pi Model | Raspbian Version      | Kernel Version | Date of Testing |
+|--------------------|-----------------------|----------------|-----------------|
+| Raspberry Pi 4     | Raspbian 12 (bookworm)| 6.6.31         | 04/08/2024      |
+| Raspberry Pi 4     | Raspbian 12           | 6.1            | 01/01/2023      |
+| Raspberry Pi Zero  | Raspbian 5.10         | -              | 01/01/2023      |
 
 ## Gotachas
 

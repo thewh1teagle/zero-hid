@@ -13,3 +13,10 @@ To test execute the following
 pip3 install pytest
 pytest tests/
 ```
+
+To get kernel version and OS info
+
+```console
+cat /etc/os-release
+uname -a
+```
