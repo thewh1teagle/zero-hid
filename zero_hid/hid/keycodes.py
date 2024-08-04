@@ -6,15 +6,15 @@ class KeyCodes:
 
     def __getitem__(self, key):
         return getattr(self, key)
-    
+
     MOD_LEFT_CONTROL = 0x01
     MOD_LEFT_SHIFT = 0x02
     MOD_LEFT_ALT = 0x04
-    MOD_LEFT_GUI = 0x08 # win button
+    MOD_LEFT_GUI = 0x08  # win button
     MOD_RIGHT_CONTROL = 0x10
     MOD_RIGHT_SHIFT = 0x20
     MOD_RIGHT_ALT = 0x40
-    MOD_RIGHT_GUI = 0x80 # win button
+    MOD_RIGHT_GUI = 0x80  # win button
 
     KEY_RESERVED = 0x00
     KEY_ERROR_ROLLOVER = 0x01
@@ -26,12 +26,12 @@ class KeyCodes:
     KEY_D = 0x07  # Keyboard d and D
     KEY_E = 0x08  # Keyboard e and E
     KEY_F = 0x09  # Keyboard f and F
-    KEY_G = 0x0a  # Keyboard g and G
-    KEY_H = 0x0b  # Keyboard h and H
-    KEY_I = 0x0c  # Keyboard i and I
-    KEY_J = 0x0d  # Keyboard j and J
-    KEY_K = 0x0e  # Keyboard k and K
-    KEY_L = 0x0f  # Keyboard l and L
+    KEY_G = 0x0A  # Keyboard g and G
+    KEY_H = 0x0B  # Keyboard h and H
+    KEY_I = 0x0C  # Keyboard i and I
+    KEY_J = 0x0D  # Keyboard j and J
+    KEY_K = 0x0E  # Keyboard k and K
+    KEY_L = 0x0F  # Keyboard l and L
     KEY_M = 0x10  # Keyboard m and M
     KEY_N = 0x11  # Keyboard n and N
     KEY_O = 0x12  # Keyboard o and O
@@ -42,13 +42,13 @@ class KeyCodes:
     KEY_T = 0x17  # Keyboard t and T
     KEY_U = 0x18  # Keyboard u and U
     KEY_V = 0x19  # Keyboard v and V
-    KEY_W = 0x1a  # Keyboard w and W
-    KEY_X = 0x1b  # Keyboard x and X
-    KEY_Y = 0x1c  # Keyboard y and Y
-    KEY_Z = 0x1d  # Keyboard z and Z
+    KEY_W = 0x1A  # Keyboard w and W
+    KEY_X = 0x1B  # Keyboard x and X
+    KEY_Y = 0x1C  # Keyboard y and Y
+    KEY_Z = 0x1D  # Keyboard z and Z
 
-    KEY_1 = 0x1e  # Keyboard 1 and !
-    KEY_2 = 0x1f  # Keyboard 2 and @
+    KEY_1 = 0x1E  # Keyboard 1 and !
+    KEY_2 = 0x1F  # Keyboard 2 and @
     KEY_3 = 0x20  # Keyboard 3 and #
     KEY_4 = 0x21  # Keyboard 4 and $
     KEY_5 = 0x22  # Keyboard 5 and %
@@ -60,12 +60,12 @@ class KeyCodes:
 
     KEY_ENTER = 0x28  # Keyboard Return (ENTER)
     KEY_ESC = 0x29  # Keyboard ESCAPE
-    KEY_BACKSPACE = 0x2a  # Keyboard DELETE (Backspace)
-    KEY_TAB = 0x2b  # Keyboard Tab
-    KEY_SPACE = 0x2c  # Keyboard Spacebar
-    KEY_MINUS = 0x2d  # Keyboard - and _
-    KEY_EQUAL = 0x2e  # Keyboard = and +
-    KEY_LEFTBRACE = 0x2f  # Keyboard [ and {
+    KEY_BACKSPACE = 0x2A  # Keyboard DELETE (Backspace)
+    KEY_TAB = 0x2B  # Keyboard Tab
+    KEY_SPACE = 0x2C  # Keyboard Spacebar
+    KEY_MINUS = 0x2D  # Keyboard - and _
+    KEY_EQUAL = 0x2E  # Keyboard = and +
+    KEY_LEFTBRACE = 0x2F  # Keyboard [ and {
     KEY_RIGHTBRACE = 0x30  # Keyboard ] and }
     KEY_BACKSLASH = 0x31  # Keyboard \ and |
     KEY_HASHTILDE = 0x32  # Keyboard Non-US # and ~
@@ -77,12 +77,12 @@ class KeyCodes:
     KEY_SLASH = 0x38  # Keyboard / and ?
     KEY_CAPSLOCK = 0x39  # Keyboard Caps Lock
 
-    KEY_F1 = 0x3a  # Keyboard F1
-    KEY_F2 = 0x3b  # Keyboard F2
-    KEY_F3 = 0x3c  # Keyboard F3
-    KEY_F4 = 0x3d  # Keyboard F4
-    KEY_F5 = 0x3e  # Keyboard F5
-    KEY_F6 = 0x3f  # Keyboard F6
+    KEY_F1 = 0x3A  # Keyboard F1
+    KEY_F2 = 0x3B  # Keyboard F2
+    KEY_F3 = 0x3C  # Keyboard F3
+    KEY_F4 = 0x3D  # Keyboard F4
+    KEY_F5 = 0x3E  # Keyboard F5
+    KEY_F6 = 0x3F  # Keyboard F6
     KEY_F7 = 0x40  # Keyboard F7
     KEY_F8 = 0x41  # Keyboard F8
     KEY_F9 = 0x42  # Keyboard F9
@@ -94,12 +94,12 @@ class KeyCodes:
     KEY_SCROLLLOCK = 0x47  # Keyboard Scroll Lock
     KEY_PAUSE = 0x48  # Keyboard Pause
     KEY_INSERT = 0x49  # Keyboard Insert
-    KEY_HOME = 0x4a  # Keyboard Home
-    KEY_PAGEUP = 0x4b  # Keyboard Page Up
-    KEY_DELETE = 0x4c  # Keyboard Delete Forward
-    KEY_END = 0x4d  # Keyboard End
-    KEY_PAGEDOWN = 0x4e  # Keyboard Page Down
-    KEY_RIGHT = 0x4f  # Keyboard Right Arrow
+    KEY_HOME = 0x4A  # Keyboard Home
+    KEY_PAGEUP = 0x4B  # Keyboard Page Up
+    KEY_DELETE = 0x4C  # Keyboard Delete Forward
+    KEY_END = 0x4D  # Keyboard End
+    KEY_PAGEDOWN = 0x4E  # Keyboard Page Down
+    KEY_RIGHT = 0x4F  # Keyboard Right Arrow
     KEY_LEFT = 0x50  # Keyboard Left Arrow
     KEY_DOWN = 0x51  # Keyboard Down Arrow
     KEY_UP = 0x52  # Keyboard Up Arrow
@@ -111,12 +111,12 @@ class KeyCodes:
     KEY_KPPLUS = 0x57  # Keypad +
     KEY_KPENTER = 0x58  # Keypad ENTER
     KEY_KP1 = 0x59  # Keypad 1 and End
-    KEY_KP2 = 0x5a  # Keypad 2 and Down Arrow
-    KEY_KP3 = 0x5b  # Keypad 3 and PageDn
-    KEY_KP4 = 0x5c  # Keypad 4 and Left Arrow
-    KEY_KP5 = 0x5d  # Keypad 5
-    KEY_KP6 = 0x5e  # Keypad 6 and Right Arrow
-    KEY_KP7 = 0x5f  # Keypad 7 and Home
+    KEY_KP2 = 0x5A  # Keypad 2 and Down Arrow
+    KEY_KP3 = 0x5B  # Keypad 3 and PageDn
+    KEY_KP4 = 0x5C  # Keypad 4 and Left Arrow
+    KEY_KP5 = 0x5D  # Keypad 5
+    KEY_KP6 = 0x5E  # Keypad 6 and Right Arrow
+    KEY_KP7 = 0x5F  # Keypad 7 and Home
     KEY_KP8 = 0x60  # Keypad 8 and Up Arrow
     KEY_KP9 = 0x61  # Keypad 9 and Page Up
     KEY_KP0 = 0x62  # Keypad 0 and Insert
@@ -129,12 +129,12 @@ class KeyCodes:
 
     KEY_F13 = 0x68  # Keyboard F13
     KEY_F14 = 0x69  # Keyboard F14
-    KEY_F15 = 0x6a  # Keyboard F15
-    KEY_F16 = 0x6b  # Keyboard F16
-    KEY_F17 = 0x6c  # Keyboard F17
-    KEY_F18 = 0x6d  # Keyboard F18
-    KEY_F19 = 0x6e  # Keyboard F19
-    KEY_F20 = 0x6f  # Keyboard F20
+    KEY_F15 = 0x6A  # Keyboard F15
+    KEY_F16 = 0x6B  # Keyboard F16
+    KEY_F17 = 0x6C  # Keyboard F17
+    KEY_F18 = 0x6D  # Keyboard F18
+    KEY_F19 = 0x6E  # Keyboard F19
+    KEY_F20 = 0x6F  # Keyboard F20
     KEY_F21 = 0x70  # Keyboard F21
     KEY_F22 = 0x71  # Keyboard F22
     KEY_F23 = 0x72  # Keyboard F23
@@ -146,12 +146,12 @@ class KeyCodes:
     KEY_FRONT = 0x77  # Keyboard Select
     KEY_STOP = 0x78  # Keyboard Stop
     KEY_AGAIN = 0x79  # Keyboard Again
-    KEY_UNDO = 0x7a  # Keyboard Undo
-    KEY_CUT = 0x7b  # Keyboard Cut
-    KEY_COPY = 0x7c  # Keyboard Copy
-    KEY_PASTE = 0x7d  # Keyboard Paste
-    KEY_FIND = 0x7e  # Keyboard Find
-    KEY_MUTE = 0x7f  # Keyboard Mute
+    KEY_UNDO = 0x7A  # Keyboard Undo
+    KEY_CUT = 0x7B  # Keyboard Cut
+    KEY_COPY = 0x7C  # Keyboard Copy
+    KEY_PASTE = 0x7D  # Keyboard Paste
+    KEY_FIND = 0x7E  # Keyboard Find
+    KEY_MUTE = 0x7F  # Keyboard Mute
     KEY_VOLUMEUP = 0x80  # Keyboard Volume Up
     KEY_VOLUMEDOWN = 0x81  # Keyboard Volume Down
     # = 0x82  Keyboard Locking Caps Lock
@@ -162,9 +162,9 @@ class KeyCodes:
     KEY_RO = 0x87  # Keyboard International1
     KEY_KATAKANAHIRAGANA = 0x88  # Keyboard International2
     KEY_YEN = 0x89  # Keyboard International3
-    KEY_HENKAN = 0x8a  # Keyboard International4
-    KEY_MUHENKAN = 0x8b  # Keyboard International5
-    KEY_KPJPCOMMA = 0x8c  # Keyboard International6
+    KEY_HENKAN = 0x8A  # Keyboard International4
+    KEY_MUHENKAN = 0x8B  # Keyboard International5
+    KEY_KPJPCOMMA = 0x8C  # Keyboard International6
     # = 0x8d  Keyboard International7
     # = 0x8e  Keyboard International8
     # = 0x8f  Keyboard International9
@@ -196,8 +196,8 @@ class KeyCodes:
     # = 0xb3  Decimal Separator
     # = 0xb4  Currency Unit
     # = 0xb5  Currency Sub-unit
-    KEY_KPLEFTPAREN = 0xb6  # Keypad (
-    KEY_KPRIGHTPAREN = 0xb7  # Keypad )
+    KEY_KPLEFTPAREN = 0xB6  # Keypad (
+    KEY_KPRIGHTPAREN = 0xB7  # Keypad )
     # = 0xb8  Keypad {
     # = 0xb9  Keypad }
     # = 0xba  Keypad Tab
@@ -237,35 +237,35 @@ class KeyCodes:
     # = 0xdc  Keypad Decimal
     # = 0xdd  Keypad Hexadecimal
 
-    KEY_LEFTCTRL = 0xe0  # Keyboard Left Control
-    KEY_LEFTSHIFT = 0xe1  # Keyboard Left Shift
-    KEY_LEFTALT = 0xe2  # Keyboard Left Alt
-    KEY_LEFTMETA = 0xe3  # Keyboard Left GUI
-    KEY_RIGHTCTRL = 0xe4  # Keyboard Right Control
-    KEY_RIGHTSHIFT = 0xe5  # Keyboard Right Shift
-    KEY_RIGHTALT = 0xe6  # Keyboard Right Alt
-    KEY_RIGHTMETA = 0xe7  # Keyboard Right GUI
+    KEY_LEFTCTRL = 0xE0  # Keyboard Left Control
+    KEY_LEFTSHIFT = 0xE1  # Keyboard Left Shift
+    KEY_LEFTALT = 0xE2  # Keyboard Left Alt
+    KEY_LEFTMETA = 0xE3  # Keyboard Left GUI
+    KEY_RIGHTCTRL = 0xE4  # Keyboard Right Control
+    KEY_RIGHTSHIFT = 0xE5  # Keyboard Right Shift
+    KEY_RIGHTALT = 0xE6  # Keyboard Right Alt
+    KEY_RIGHTMETA = 0xE7  # Keyboard Right GUI
 
-    KEY_MEDIA_PLAYPAUSE = 0xe8
-    KEY_MEDIA_STOPCD = 0xe9
-    KEY_MEDIA_PREVIOUSSONG = 0xea
-    KEY_MEDIA_NEXTSONG = 0xeb
-    KEY_MEDIA_EJECTCD = 0xec
-    KEY_MEDIA_VOLUMEUP = 0xed
-    KEY_MEDIA_VOLUMEDOWN = 0xee
-    KEY_MEDIA_MUTE = 0xef
-    KEY_MEDIA_WWW = 0xf0
-    KEY_MEDIA_BACK = 0xf1
-    KEY_MEDIA_FORWARD = 0xf2
-    KEY_MEDIA_STOP = 0xf3
-    KEY_MEDIA_FIND = 0xf4
-    KEY_MEDIA_SCROLLUP = 0xf5
-    KEY_MEDIA_SCROLLDOWN = 0xf6
-    KEY_MEDIA_EDIT = 0xf7
-    KEY_MEDIA_SLEEP = 0xf8
-    KEY_MEDIA_COFFEE = 0xf9
-    KEY_MEDIA_REFRESH = 0xfa
-    KEY_MEDIA_CALC = 0xfb
+    KEY_MEDIA_PLAYPAUSE = 0xE8
+    KEY_MEDIA_STOPCD = 0xE9
+    KEY_MEDIA_PREVIOUSSONG = 0xEA
+    KEY_MEDIA_NEXTSONG = 0xEB
+    KEY_MEDIA_EJECTCD = 0xEC
+    KEY_MEDIA_VOLUMEUP = 0xED
+    KEY_MEDIA_VOLUMEDOWN = 0xEE
+    KEY_MEDIA_MUTE = 0xEF
+    KEY_MEDIA_WWW = 0xF0
+    KEY_MEDIA_BACK = 0xF1
+    KEY_MEDIA_FORWARD = 0xF2
+    KEY_MEDIA_STOP = 0xF3
+    KEY_MEDIA_FIND = 0xF4
+    KEY_MEDIA_SCROLLUP = 0xF5
+    KEY_MEDIA_SCROLLDOWN = 0xF6
+    KEY_MEDIA_EDIT = 0xF7
+    KEY_MEDIA_SLEEP = 0xF8
+    KEY_MEDIA_COFFEE = 0xF9
+    KEY_MEDIA_REFRESH = 0xFA
+    KEY_MEDIA_CALC = 0xFB
 
 
 KeyCodes = KeyCodes()

@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
-with open('README.md', 'r') as f:
+with open("README.md", "r") as f:
     long_description = f.read()
 # with open('requirements.txt', 'r') as f:
 #     requirements = f.read().splitlines()
 setup(
     name="zero-hid",  # How you named your package folder
-    packages=['zero_hid', 'zero_hid.hid'],  # Chose the same as "name"
+    packages=["zero_hid", "zero_hid.hid"],  # Chose the same as "name"
     include_package_data=True,
     version="v1.0.0",  # Start with a small number and increase it with every change you make
     license="LGPL",  # Chose a license from here: https://help.github.com/articles/licensing-a-repository
@@ -32,8 +32,11 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    
 )
 print("********************* NOTE *********************")
-print("To make this library work, you MUST enable usb gadget module in your raspberry pi")
-print("Please refer to https://github.com/thewh1teagle/zero-hid#setup---tested-on-raspbian-lite-510")
+print(
+    "To make this library work, you MUST enable usb gadget module in your raspberry pi"
+)
+print(
+    "Please refer to https://github.com/thewh1teagle/zero-hid#setup---tested-on-raspbian-lite-510"
+)
