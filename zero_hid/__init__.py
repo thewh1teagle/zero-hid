@@ -1,5 +1,5 @@
-from .Mouse import Mouse
-from .Keyboard import Keyboard
+from .mouse import Mouse
+from .keyboard import Keyboard
 from .hid.keycodes import KeyCodes
 from . import defaults
 
