@@ -10,7 +10,7 @@ pip3 install -e .
 To test execute the following
 
 ```console
-pip3 install pytest
+pip3 install -r dev_requirements.txt
 pytest tests/
 ```
 
