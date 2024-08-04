@@ -1,6 +1,6 @@
 from typing import List
 
-from .hid.keyboard import send_keystroke, release_keys
+from .hid.keyboard import send_keystroke, release_keys, read_last_report
 from .hid.keycodes import KeyCodes
 from . import defaults
 from time import sleep
@@ -10,6 +10,12 @@ from functools import reduce
 import pkgutil
 import os
 import pathlib
+from typing import TypedDict
+
+class LEDState(TypedDict):
+    num_lock: bool
+    caps_lock: bool
+    scroll_lock: bool
 
 class Keyboard:
     
@@ -30,7 +36,22 @@ class Keyboard:
                 name, desc = content['Name'], content['Description']
             print(f'{count}. {name}: {desc}') 
         
+    def blocking_read_led_state(self) -> LEDState:
+        """
+        **The function will block until the LED state has been read from the device.**
+        """
+        self.dev
+        report = read_last_report(self.dev, 1)  # Read 1 byte from the HID device
+        led_indicators = report[0]  # Convert the byte to an integer
         
+        # Interpret the LED indicators
+        return {
+            'num_lock': (led_indicators & 0x01) != 0,
+            'caps_lock': (led_indicators & 0x02) != 0,
+            'scroll_lock': (led_indicators & 0x04) != 0
+        }
+
+
     def set_layout(self,  language='US'):
         self.layout = json.loads( pkgutil.get_data(__name__, f"keymaps/{language}.json").decode() )
     
