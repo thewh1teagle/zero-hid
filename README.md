@@ -65,3 +65,7 @@ see [examples](examples)
 | Raspberry Pi 4      | Raspbian 12       | 6.1            |
 | Raspberry Pi Zero   | Raspbian 5.10     | -              |
 
+## Gotachas
+
+---
+Absolute mouse used only for positining. use relative mouse for clicking etc. see examples.
