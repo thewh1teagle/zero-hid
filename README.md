@@ -68,7 +68,7 @@ see [examples](examples)
 | Raspberry Pi 4     | Raspbian 12           | 6.1            | 01/01/2023      |
 | Raspberry Pi Zero  | Raspbian 5.10         | -              | 01/01/2023      |
 
-## Gotachas
+## Gotchas
 
 ---
-Absolute mouse used only for positining. use relative mouse for clicking etc. see examples.
+Absolute mouse used only for positioning - use relative mouse for clicking, etc. See examples.
