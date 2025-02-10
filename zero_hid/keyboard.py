@@ -70,7 +70,7 @@ class Keyboard:
             if len(mods) == 1:
                 mods = mods[0]
             else:
-                mods = reduce(operator.and_, mods, 0)
+                mods = reduce(operator.or_, mods, 0)
             send_keystroke(self.dev, mods, keys[0])
             sleep(delay)
 
@@ -78,7 +78,7 @@ class Keyboard:
         if len(mods) == 1:
             mods = mods[0]
         else:
-            mods = reduce(operator.and_, mods, 0)
+            mods = reduce(operator.or_, mods, 0)
         send_keystroke(self.dev, mods, key_code, release=release)
 
     def release(self):
