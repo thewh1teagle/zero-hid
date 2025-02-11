@@ -1,0 +1,25 @@
+[project]
+name = "zero-hid"
+version = "1.0.2"
+description = "Library for emulate mouse and keyboard on raspberry pi zero"
+readme = "README.md"
+keywords = ["rpi", "raspberry", "hid"]
+license = { text = "LGPL" }
+authors = [
+    { name = "thewh1teagle", email = "61390950+thewh1teagle@users.noreply.github.com" },
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["zero_hid"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=8.3.4", "ruff>=0.9.6"]
+
+[project.urls]
+Homepage = "https://github.com/thewh1teagle/zero-hid"

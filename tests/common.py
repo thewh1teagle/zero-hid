@@ -1,12 +1,15 @@
 import tempfile
 import os
+import uuid
+from contextlib import contextmanager
 
 
-def random_file():
-    # Create a temporary directory
-    temp_dir = tempfile.mkdtemp()
-
-    # Generate a random file name
-    file_name = tempfile.NamedTemporaryFile(dir=temp_dir, delete=False).name
-    # Return the path of the random file
-    return file_name
+@contextmanager
+def temp_path():
+    temp_dir = tempfile.gettempdir()
+    file_path = os.path.join(temp_dir, f"temp_{uuid.uuid4().hex}")
+    try:
+        yield file_path
+    finally:
+        if os.path.exists(file_path):
+            os.remove(file_path)
