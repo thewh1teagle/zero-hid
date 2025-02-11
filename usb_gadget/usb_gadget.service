@@ -1,0 +1,14 @@
+[Unit]
+Description=Init usb gadget (zero-hid)
+DefaultDependencies=no
+After=sysinit.target local-fs.target
+Before=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/init_usb_gadget
+TimeoutSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=basic.target
