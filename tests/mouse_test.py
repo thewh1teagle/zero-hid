@@ -1,23 +1,18 @@
-import tempfile
 from zero_hid import Mouse
-from common import random_file
+from common import read_bytes, temp_path
 
 
 def test_left_click():
-    with open(random_file(), "ab+") as f:
-        m = Mouse(f)
+    with temp_path() as p:
+        m = Mouse(p)
         m.left_click()
-        f.seek(0)
-        data = f.read()
-        f.close()
+        data = read_bytes(p)
     assert b"\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00" == data
 
 
 def test_move():
-    with open(random_file(), "ab+") as f:
-        m = Mouse(f)
+    with temp_path() as p:
+        m = Mouse(p)
         m.move(100, 100)
-        f.seek(0)
-        data = f.read()
-        f.close()
+        data = read_bytes(p)
     assert b"\x00dd\x00\x00" == data

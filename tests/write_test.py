@@ -17,7 +17,6 @@ def test_process_with_result_child_completed():
 
 
 def test_process_with_result_child_not_completed():
-
     def target():
         time.sleep(1)
 
@@ -31,7 +30,6 @@ def test_process_with_result_child_not_completed():
 
 
 def test_process_with_result_child_exception():
-
     def target():
         raise Exception("Child exception")
 
@@ -42,13 +40,12 @@ def test_process_with_result_child_exception():
         process.start()
         process.join()
     result = process.result()
-    assert result.was_successful() == False
+    assert result.was_successful() is False
     assert hid.write.ProcessResult(return_value=None, exception=mock.ANY) == result
     assert "Child exception" == str(result.exception)
 
 
 def test_process_with_result_return_value():
-
     def target():
         return "Done!"
 

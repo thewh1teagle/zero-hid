@@ -13,3 +13,8 @@ def temp_path():
     finally:
         if os.path.exists(file_path):
             os.remove(file_path)
+
+
+def read_bytes(path) -> bytes:
+    with open(path, "rb") as f:
+        return f.read()
