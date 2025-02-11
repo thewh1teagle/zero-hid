@@ -29,12 +29,16 @@ install() {
     else
         echo "dtoverlay=dwc2" | sudo tee -a /boot/config.txt
     fi
-    echo "dwc2" | sudo tee -a /etc/modules # loat at boot
+    echo "dwc2" | sudo tee -a /etc/modules # load at boot
     echo "libcomposite" | sudo tee -a /etc/modules
     cp init_usb_gadget /usr/bin/ # USB gadget configFS
     chmod +x /usr/bin/init_usb_gadget
-    sed -i '/^exit 0/i /usr/bin/init_usb_gadget' /etc/rc.local # libcomposite configuration
-    /usr/bin/init_usb_gadget 2>/dev/null
+    
+    # Configure systemd unit
+    cp usb_gadget.service /etc/systemd/system/
+    systemctl daemon-reload
+    systemctl enable usb_gadget.service
+    systemctl start usb_gadget.service
 }
 
 
@@ -49,10 +53,14 @@ uninstall () {
     else
         sed -i '/dtoverlay=dwc2/d' /boot/config.txt
     fi
-
+    
     sed -i '/dwc2/d' /etc/modules
     sed -i '/libcomposite/d' /etc/modules
-    sed -i '/init_usb_gadget/d' /etc/rc.local
+    
+    # Remove systemd unit
+    systemctl disable usb_gadget.service
+    rm -rf /etc/systemd/system/usb_gadget.service
+    systemctl daemon-reload
     ask_reboot
 }
 
