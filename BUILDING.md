@@ -1,17 +1,15 @@
 # Building
 
 To build execute the following
+
 ```console
-python3 -m venv venv
-source venv/bin/activate
-pip3 install -e .
+uv build
 ```
 
 To test execute the following
 
 ```console
-pip3 install -r dev_requirements.txt
-pytest tests/
+uv run pytest
 ```
 
 To get kernel version and OS info
